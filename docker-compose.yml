@@ -1,0 +1,10 @@
+# Levanta RabbitMQ 4 con la interfaz web de administración.
+#   docker compose up -d      -> arranca
+#   docker compose down       -> detiene
+services:
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"     # AMQP: por acá se conectan nuestros programas
+      - "15672:15672"   # Interfaz web: http://localhost:15672 (guest / guest)
